@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj": {}
+    "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj": {}
   },
   "projects": {
-    "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj": {
+    "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj",
+        "projectUniqueName": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj",
         "projectName": "KolomiietsM_HomeWork2",
-        "projectPath": "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj",
+        "projectPath": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2.csproj",
         "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\obj\\",
+        "outputPath": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork2\\KolomiietsM_HomeWork2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",

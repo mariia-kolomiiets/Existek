@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,9 +8,10 @@ namespace KolomiietsM_HomeWork2
 {
     public class ContentService : IContentService
     {
-        public void makeContent()
+        public async Task makeContent(HttpContext context)
         {
-            Console.WriteLine("Making creating content.");
+            await context.Response.WriteAsync("//creating some content.//");
+            Console.WriteLine("//creating some content.//");
         }
     }
 }

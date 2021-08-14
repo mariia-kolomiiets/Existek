@@ -30,7 +30,7 @@ namespace KolomiietsM_HomeWork2
             });
 
             services.AddSingleton<MainLogicService>();
-            services.AddScoped<CheckService>();
+            services.AddTransient<CheckService>();
             services.AddTransient<IContentService, ContentService>();
             services.AddTransient<ISaveService, SaveService>();
             services.AddTransient<PublicService>();

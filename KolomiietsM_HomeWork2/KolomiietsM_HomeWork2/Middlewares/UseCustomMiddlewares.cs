@@ -10,7 +10,10 @@ namespace KolomiietsM_HomeWork2.Middlewares
     {
         public static IApplicationBuilder UseCustomMiddleware(this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<FirstMiddleware>();
+            builder.UseMiddleware<FirstMiddleware>();
+            builder.UseMiddleware<SecondMiddleware>();
+            builder.UseMiddleware<ThirdMiddleware>();
+            return builder;
         }
     }
 }
