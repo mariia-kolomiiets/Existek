@@ -1,0 +1,11 @@
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\KolomiietsM_HomeWork1.exe
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\appsettings.json
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\KolomiietsM_HomeWork1.dll
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\KolomiietsM_HomeWork1.deps.json
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\KolomiietsM_HomeWork1.runtimeconfig.json
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\KolomiietsM_HomeWork1.pdb
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Existek\KolomiietsM_HomeWork1\KolomiietsM_HomeWork1\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
