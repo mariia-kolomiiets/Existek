@@ -25,6 +25,7 @@ namespace KolomiietsM_HomeWork2.Middlewares
         {
             if (httpContext.Request.Path == path)
             {
+                await httpContext.Response.WriteAsync("\nSECOND MIDDLEWARE\n");
                 await contentService.makeContent(httpContext);
                 await publicService.publish(httpContext);
                 await nextMiddleware.Invoke(httpContext);

@@ -11,14 +11,12 @@ namespace KolomiietsM_HomeWork2.Middlewares
         //RequestDelegate next  middlevare in ctor
         //Invoke / InvokeAsync (HttpContext) return TASK
         private readonly RequestDelegate nextMiddleware;
-        private readonly MainLogicService mainLogicService;
         private readonly PublicService publicService;
         private readonly String path;
 
-        public FirstMiddleware(RequestDelegate nextMiddleware, MainLogicService mainLogicService, PublicService publicService, String path)
+        public FirstMiddleware(RequestDelegate nextMiddleware, PublicService publicService, String path)
         {
             this.nextMiddleware = nextMiddleware;
-            this.mainLogicService = mainLogicService;
             this.publicService = publicService;
             this.path = path;
         }
@@ -27,7 +25,7 @@ namespace KolomiietsM_HomeWork2.Middlewares
         {
             if (httpContext.Request.Path == path)
             {
-                await mainLogicService.doMainLogic(httpContext);
+                await httpContext.Response.WriteAsync("FIRST MIDDLEWARE\n");
                 await publicService.publish(httpContext);
                 await nextMiddleware.Invoke(httpContext);
             }
