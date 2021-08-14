@@ -45,7 +45,7 @@ namespace KolomiietsM_HomeWork2
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "KolomiietsM_HomeWork2 v1"));
             }
 
-            app.UseCustomMiddleware(); //THIS IS MY EXTENSION METHOD for adding custom middleware
+            app.UseCustomMiddleware("/publish"); //THIS IS MY EXTENSION METHOD for adding custom middleware
 
             app.UseHttpsRedirection();
 

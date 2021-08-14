@@ -10,17 +10,22 @@ namespace KolomiietsM_HomeWork2.Middlewares
     {
         private readonly RequestDelegate nextMiddleware;
         private readonly CheckService checkService;
+        private readonly String path;
 
-        public ThirdMiddleware(RequestDelegate nextMiddleware, CheckService checkService)
+        public ThirdMiddleware(RequestDelegate nextMiddleware, CheckService checkService, String path)
         {
             this.nextMiddleware = nextMiddleware;
             this.checkService = checkService;
+            this.path = path;
         }
 
         public async Task InvokeAsync(HttpContext httpContext)
         {
-            await checkService.check(httpContext);
-            await nextMiddleware.Invoke(httpContext);
+            if (httpContext.Request.Path == path)
+            {
+                await checkService.check(httpContext);
+                await nextMiddleware.Invoke(httpContext);
+            }
         }
     }
 }

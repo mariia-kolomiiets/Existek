@@ -13,19 +13,24 @@ namespace KolomiietsM_HomeWork2.Middlewares
         private readonly RequestDelegate nextMiddleware;
         private readonly MainLogicService mainLogicService;
         private readonly PublicService publicService;
+        private readonly String path;
 
-        public FirstMiddleware(RequestDelegate nextMiddleware, MainLogicService mainLogicService, PublicService publicService)
+        public FirstMiddleware(RequestDelegate nextMiddleware, MainLogicService mainLogicService, PublicService publicService, String path)
         {
             this.nextMiddleware = nextMiddleware;
             this.mainLogicService = mainLogicService;
             this.publicService = publicService;
+            this.path = path;
         }
 
         public async Task InvokeAsync(HttpContext httpContext)
         {
-            await mainLogicService.doMainLogic(httpContext);
-            await publicService.publish(httpContext);
-            await nextMiddleware.Invoke(httpContext);
+            if (httpContext.Request.Path == path)
+            {
+                await mainLogicService.doMainLogic(httpContext);
+                await publicService.publish(httpContext);
+                await nextMiddleware.Invoke(httpContext);
+            }
         }
     }
 }
