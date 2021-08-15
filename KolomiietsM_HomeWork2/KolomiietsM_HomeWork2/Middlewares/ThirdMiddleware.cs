@@ -23,7 +23,7 @@ namespace KolomiietsM_HomeWork2.Middlewares
         {
             if (httpContext.Request.Path == path)
             {
-                await httpContext.Response.WriteAsync("\nTHIRS MIDDLEWARE\n");
+                await httpContext.Response.WriteAsync("\nTHIRD MIDDLEWARE\n");
                 await checkService.check(httpContext);
                 await nextMiddleware.Invoke(httpContext);
             }

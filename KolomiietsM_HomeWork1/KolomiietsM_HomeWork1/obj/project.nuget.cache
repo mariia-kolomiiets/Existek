@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vIv4M3ZNt0f/i/Kf1cQOloVaxf4R4gV7dYfNaLVqJTLgGzxdLnq9QLX9SycSuxUdxpJadqu2CcFQWwSqiyqhsQ==",
+  "dgSpecHash": "8CErYzgyaD3EyZO77gKFe12v0rhQTagP6krfIO/EsO+SOuZ7yqhjpIUXyEzdX1A3gC5G1lFb3QWIu/T3ZPZgjQ==",
   "success": true,
-  "projectFilePath": "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1.csproj",
+  "projectFilePath": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maria\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\maria\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

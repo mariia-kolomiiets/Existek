@@ -1,0 +1,15 @@
+{
+  "location": "Canada, Toronto, Seventh st., 7a",
+  "addres": "172.12.12.3",
+  "created": "2021-08-10T00:00:00",
+  "server": {
+    "name": "machine1A",
+    "port": "3322",
+    "delay": 12.2,
+    "settings": {
+      "user": "admin",
+      "load": "auto",
+      "connections": 235
+    }
+  }
+}

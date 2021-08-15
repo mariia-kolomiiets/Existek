@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1.csproj",
+      "projectUniqueName": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1.csproj",
       "projectName": "KolomiietsM_HomeWork1",
-      "projectPath": "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1.csproj",
+      "projectPath": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1.csproj",
       "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-      "outputPath": "E:\\Existek\\SecondPART\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\obj\\",
+      "outputPath": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork1\\KolomiietsM_HomeWork1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
