@@ -21,20 +21,6 @@ namespace KolomiietsM_HomeWork3.OwnProvider
             string key = "pix";
             string value = pixelColor.Name;
             data.Add(key, value);
-
-            //using (FileStream fs = new FileStream(FilePath, FileMode.Open))
-            //{
-            //    using (StreamReader textReader = new StreamReader(fs))
-            //    {
-            //        string line;
-            //        while ((line = textReader.ReadLine()) != null)
-            //        {
-            //            string key = line.Trim();
-            //            string value = textReader.ReadLine();
-            //            data.Add(key, value);
-            //        }
-            //    }
-            //}
             Data = data;
         }
     }

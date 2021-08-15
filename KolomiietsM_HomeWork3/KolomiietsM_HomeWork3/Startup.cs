@@ -28,7 +28,7 @@ namespace KolomiietsM_HomeWork3
             var builder = new ConfigurationBuilder()
                 .SetBasePath(System.IO.Directory.GetCurrentDirectory());
 
-            builder.AddTextFile("cartoon.jpg");
+            builder.AddCartoonFile("cartoon.jpg");
             OwnConfiguration = builder.Build();
         }
 

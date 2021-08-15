@@ -8,7 +8,7 @@ namespace KolomiietsM_HomeWork3.OwnProvider
 {
     public static class CartoonConfigurationExtensions
     {
-        public static IConfigurationBuilder AddTextFile(this IConfigurationBuilder builder, string path)
+        public static IConfigurationBuilder AddCartoonFile(this IConfigurationBuilder builder, string path)
         {
             if (builder == null)
             {
