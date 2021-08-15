@@ -28,3 +28,6 @@ E:\Existek\WEBPart\KolomiietsM_HomeWork3\KolomiietsM_HomeWork3\obj\Debug\net5.0\
 E:\Existek\WEBPart\KolomiietsM_HomeWork3\KolomiietsM_HomeWork3\obj\Debug\net5.0\ref\KolomiietsM_HomeWork3.dll
 E:\Existek\WEBPart\KolomiietsM_HomeWork3\KolomiietsM_HomeWork3\obj\Debug\net5.0\KolomiietsM_HomeWork3.pdb
 E:\Existek\WEBPart\KolomiietsM_HomeWork3\KolomiietsM_HomeWork3\obj\Debug\net5.0\KolomiietsM_HomeWork3.genruntimeconfig.cache
+E:\Existek\WEBPart\KolomiietsM_HomeWork3\KolomiietsM_HomeWork3\bin\Debug\net5.0\System.Drawing.Common.dll
+E:\Existek\WEBPart\KolomiietsM_HomeWork3\KolomiietsM_HomeWork3\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\Existek\WEBPart\KolomiietsM_HomeWork3\KolomiietsM_HomeWork3\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

@@ -1,3 +1,4 @@
+using KolomiietsM_HomeWork3.OwnProvider;
 using KolomiietsM_HomeWork3.Projections;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,10 +24,17 @@ namespace KolomiietsM_HomeWork3
         {
             Configuration = configuration;
             NewConfiguration = new ConfigurationBuilder().AddJsonFile("customConfigs.json").AddConfiguration(configuration).Build();
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(System.IO.Directory.GetCurrentDirectory());
+
+            builder.AddTextFile("cartoon.jpg");
+            OwnConfiguration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
         public IConfiguration NewConfiguration { get; set; }
+        public IConfiguration OwnConfiguration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -50,6 +58,7 @@ namespace KolomiietsM_HomeWork3
             DateTime createdDate;
             DateTime.TryParse(NewConfiguration["created"], out createdDate);
 
+            var pixel = OwnConfiguration.GetSection("pix").Value;
 
             if (env.IsDevelopment())
             {
@@ -72,7 +81,8 @@ namespace KolomiietsM_HomeWork3
                 {
                     await context.Response.WriteAsync($"Server {gotServer.name} - {NewConfiguration["addres"]}:{gotServer.port}.\n" +
                         $"Located on: {NewConfiguration["location"]}// created {createdDate}.\n" +
-                        $"info [{gotServer.delay} delay; {gotServer.settings.connections} max connections]");
+                        $"info [{gotServer.delay} delay; {gotServer.settings.connections} max connections]\n\n" +
+                        $"From own cartoon configuration got {pixel} pixel color.");
                 });
             });
         }
