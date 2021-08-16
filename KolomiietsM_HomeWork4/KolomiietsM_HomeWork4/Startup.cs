@@ -1,5 +1,7 @@
+using KolomiietsM_HomeWork4.OwnLogger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,7 +26,6 @@ namespace KolomiietsM_HomeWork4
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -34,9 +36,24 @@ namespace KolomiietsM_HomeWork4
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> startupLogger, ILoggerFactory loggerFactory) //
         {
+            string path = $"{Directory.GetCurrentDirectory()}/custom.logs";
+
+            //loggerFactory.AddCustomProvider(path); //ALTERNATIVE #1 WITH DI ILoggerFactory
+            //ILogger customLogger = loggerFactory.CreateLogger("CustomLogger");
+
+            //var ownLoggerFactory = LoggerFactory.Create(builder => //ALTERNATIVE #2
+            // {
+            //     builder.AddProvider(new CustomLoggerProvider(path));
+            // });
+
+            startupLogger.Log(LogLevel.Warning, "First logger Warning Warning Warning");
+            startupLogger.Log(LogLevel.Information, "Second logger Information");
+            startupLogger.Log(LogLevel.Trace, "Third logger Trace Trace");
+            startupLogger.Log(LogLevel.Debug, "Fourth logger Debug");
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -52,6 +69,12 @@ namespace KolomiietsM_HomeWork4
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGet("/log", async requestDelegate =>
+                {
+                    startupLogger.Log(LogLevel.Critical, "Fifth logger Critical! Critical! Critical!");
+                    startupLogger.Log(LogLevel.Error, "Sixth logger ErrorErrorErrorErrorErrorError");
+                    await requestDelegate.Response.WriteAsync("Logged!");
+                });
                 endpoints.MapControllers();
             });
         }
