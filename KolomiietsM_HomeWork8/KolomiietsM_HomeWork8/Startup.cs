@@ -1,4 +1,5 @@
 using KolomiietsM_HomeWork8.Context;
+using KolomiietsM_HomeWork8.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,11 +33,17 @@ namespace KolomiietsM_HomeWork8
             services.AddDbContext<DORMContext>(options =>
                 options.UseSqlServer(connection));
 
+            services.AddTransient<DishRepository>();
+            services.AddTransient<MenuRepository>();
+            services.AddTransient<OrderRepository>();
+            services.AddTransient<RestaurantRepository>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "KolomiietsM_HomeWork8", Version = "v1" });
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

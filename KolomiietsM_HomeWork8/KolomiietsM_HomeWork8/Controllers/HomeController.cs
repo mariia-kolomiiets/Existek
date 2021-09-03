@@ -1,5 +1,7 @@
 ﻿using KolomiietsM_HomeWork8.Context;
 using KolomiietsM_HomeWork8.Models;
+using KolomiietsM_HomeWork8.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,88 +14,66 @@ namespace KolomiietsM_HomeWork8.Controllers
     public class HomeController : ControllerBase
     {
         private DORMContext context;
-        public HomeController(DORMContext context)
+        OrderRepository orderRepository;
+        public HomeController(DORMContext context, DishRepository dishRepository, MenuRepository menuRepository,
+            OrderRepository orderRepository, RestaurantRepository restaurantRepository)
         {
             this.context = context;
+            new InitializationContext(context);
+            this.orderRepository = orderRepository;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("[action]/{customer}-{price}-{persons}-{place}")]
-        public async Task AddOrder(string customer, float price, int persons, Restaurant place)
+        public async Task AddOrder(string customer, float price, int persons, string place)
         {
-            context.Orders.Add(new Models.Order
+            orderRepository.Create(new Models.Order
             {
                 Customer = customer,
                 Date = DateTime.Today,
                 Persons = persons,
                 Price = price,
-                Place = context.Restaurants.FirstOrDefault(r => r.Title.Contains(place.Title))
+                Place = context.Restaurants.FirstOrDefault(r => r.Title.Contains(place))
             });
-            context.SaveChanges();
+
+            await HttpContext.Response.WriteAsync("Order added.");
         }
 
         [HttpGet]
-        [Route("Init")]
-        public async Task InitValues()
+        [Route("[action]")]
+        public async Task GetOrders()
         {
-            initDbValues();
+            string allOrders = "";
+            List<Order> orders = (await orderRepository.GetAll()).ToList();
+            orders.ForEach(o => allOrders += $"{o.Date}: {o.Customer} at {o.Place.Title} restaurant. For {o.Persons} persons. Price {o.Price}$\n");
+            await HttpContext.Response.WriteAsync(allOrders);
         }
 
         [HttpGet]
-        private void initDbValues()
+        [Route("[action]/{customer}")]
+        public async Task GetOrder(string customer)
         {
-            Menu seaMenu = new Menu
-            {
-                Title = "SeaFood"
-            };
-            Menu italMenu = new Menu
-            {
-                Title = "ItalianFood"
-            };
+            string allOrders = "";
+            List <Order> orders =  orderRepository.GetByCustomer(customer).ToList();
+            orders.ForEach(o => allOrders += $"{o.Date}: {o.Customer} at {o.Place.Title} restaurant. For {o.Persons} persons. Price {o.Price}$\n");
+            await HttpContext.Response.WriteAsync(allOrders);
+        }
 
-            context.Menus.Add(seaMenu);
-            context.Menus.Add(italMenu);
+        [HttpPut]
+        [Route("[action]/{id}")]
+        public async Task ChangeOrder(int id, Order newOrder)
+        {
+            newOrder.Id = id;
+            orderRepository.Update(newOrder);
+            await HttpContext.Response.WriteAsync("Order updated.");
+        }
 
-            context.Dishes.Add(new Dish
-            {
-                Title = "Fish-polo",
-                Description = "Fried fish with chips",
-                Menus = new List<Menu>() { seaMenu, italMenu }
-            });
-            context.Dishes.Add(new Dish
-            {
-                Title = "Spaghetti aroma",
-                Description = "Spaghetti with tomatoes and cheese",
-                Menus = new List<Menu>() { italMenu }
-            });
-            context.Dishes.Add(new Dish
-            {
-                Title = "Rala vollo",
-                Description = "Raviolli with cream sauce",
-                Menus = new List<Menu>() { italMenu }
-            });
-            context.Dishes.Add(new Dish
-            {
-                Title = "Kioto",
-                Description = "Red fish with onion",
-                Menus = new List<Menu>() { seaMenu }
-            });
-
-            context.Restaurants.Add(new Restaurant
-            {
-                Title = "SeaFree",
-                Address = "Desbr street, 7",
-                Menu = seaMenu
-            });
-
-            context.Restaurants.Add(new Restaurant
-            {
-                Title = "ElFojo",
-                Address = "Tropio street, 23",
-                Menu = italMenu
-            });
-
-            context.SaveChanges();
+        [HttpDelete]
+        [Route("[action]/{id}")]
+        public async Task DeleteOrder(int id)
+        {
+            orderRepository.Delete(id);
+            await HttpContext.Response.WriteAsync("Order deleted.");
         }
 
     }
