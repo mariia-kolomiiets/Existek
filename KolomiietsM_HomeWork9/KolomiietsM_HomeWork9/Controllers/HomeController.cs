@@ -24,16 +24,19 @@ namespace KolomiietsM_HomeWork9.Controllers
         }
 
         [HttpPost]
-        [Route("[action]/{customer}-{price}-{persons}-{place}")]
-        public async Task AddOrder(string customer, float price, int persons, string place)
+        [Route("[action]")]
+        public async Task AddOrder([FromBody] OrderDTO orderDTO)
         {
+            var aaa = HttpContext.Request.Body;
+            var bbb = Request.Body;
+            var ccc = Request;
             orderRepository.Create(new Models.Order
             {
-                Customer = customer,
+                Customer = orderDTO.customer,
                 Date = DateTime.Today,
-                Persons = persons,
-                Price = price,
-                Place = context.Restaurants.FirstOrDefault(r => r.Title.Contains(place))
+                Persons = orderDTO.persons,
+                Price = orderDTO.price,
+                Place = context.Restaurants.FirstOrDefault(r => r.Title.Contains(orderDTO.place))
             });
 
             await HttpContext.Response.WriteAsync("Order added.");
@@ -51,7 +54,7 @@ namespace KolomiietsM_HomeWork9.Controllers
 
         [HttpGet]
         [Route("[action]/{customer}")]
-        public async Task GetOrder(string customer)
+        public async Task GetOrder([FromRoute] string customer)
         {
             string allOrders = "";
             List <Order> orders =  orderRepository.GetByCustomer(customer).ToList();
@@ -60,8 +63,8 @@ namespace KolomiietsM_HomeWork9.Controllers
         }
 
         [HttpPut]
-        [Route("[action]/{id}")]
-        public async Task ChangeOrder(int id, Order newOrder)
+        [Route("[action]")]
+        public async Task ChangeOrder([FromQuery] int id,[FromBody] Order newOrder)
         {
             newOrder.Id = id;
             orderRepository.Update(newOrder);
@@ -69,8 +72,8 @@ namespace KolomiietsM_HomeWork9.Controllers
         }
 
         [HttpDelete]
-        [Route("[action]/{id}")]
-        public async Task DeleteOrder(int id)
+        [Route("[action]")]
+        public async Task DeleteOrder([FromHeader] int id)
         {
             orderRepository.Delete(id);
             await HttpContext.Response.WriteAsync("Order deleted.");

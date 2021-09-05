@@ -5978,19 +5978,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mkolomiiets\\.nuget\\packages\\": {}
+    "C:\\Users\\maria\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Test\\Existek\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9.csproj",
+      "projectUniqueName": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9.csproj",
       "projectName": "KolomiietsM_HomeWork9",
-      "projectPath": "D:\\Test\\Existek\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9.csproj",
-      "packagesPath": "C:\\Users\\mkolomiiets\\.nuget\\packages\\",
-      "outputPath": "D:\\Test\\Existek\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9\\obj\\",
+      "projectPath": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9.csproj",
+      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+      "outputPath": "E:\\Existek\\WEBPart\\KolomiietsM_HomeWork9\\KolomiietsM_HomeWork9\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mkolomiiets\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5998,7 +5998,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\newNuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6050,7 +6049,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

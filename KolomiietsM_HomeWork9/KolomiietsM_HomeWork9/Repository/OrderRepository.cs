@@ -63,6 +63,8 @@ namespace KolomiietsM_HomeWork9.Repository
 
         public void Update(Order item)
         {
+            Restaurant newRestaurant = context.Restaurants.Find(item.Place.Id);
+            item.Place = newRestaurant;
             context.Entry(item).State = EntityState.Modified;
             context.SaveChanges();
         }

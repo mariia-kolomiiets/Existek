@@ -1,0 +1,40 @@
+POST AddOrder()
+Request body
+{
+  "customer": "alan stree",
+  "price": 11.43,
+  "persons": 2,
+  "place": "SeaFree"
+}
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+
+GET GetOrder()
+Route
+Customer: "alan stree"
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+
+PUT ChangeOrder()
+Query
+id: 8
+
+Request body:
+{
+  "id": 8,
+  "customer": "se se",
+  "price": 50,
+  "persons": 4,
+  "date": "2021-10-05T08:09:59.336Z",
+  "place": {
+      "id": 18
+  }
+}
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+
+DELETE DeleteOrder()
+Header
+id: 8
