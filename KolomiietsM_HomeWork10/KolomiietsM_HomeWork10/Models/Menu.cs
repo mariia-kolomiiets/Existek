@@ -1,10 +1,12 @@
-﻿using System;
+﻿using KolomiietsM_HomeWork10.OwnValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace KolomiietsM_HomeWork10.Models
 {
+    [OwnValidationClassAttribute]
     public class Menu
     {
         public int Id { get; set; }

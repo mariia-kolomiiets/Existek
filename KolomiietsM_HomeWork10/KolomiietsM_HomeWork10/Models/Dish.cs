@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KolomiietsM_HomeWork10.OwnValidation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace KolomiietsM_HomeWork10.Models
 {
+    [OwnValidationClassAttribute]
     public class Dish : IValidatableObject
     {
         public int Id { get; set; }
@@ -16,7 +18,22 @@ namespace KolomiietsM_HomeWork10.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            throw new NotImplementedException();
+            List<ValidationResult> errors = new List<ValidationResult>();
+
+            if (string.IsNullOrWhiteSpace(this.Description))
+            {
+                errors.Add(new ValidationResult("Add the description to your dish."));
+            }
+            if (string.IsNullOrWhiteSpace(this.Title))
+            {
+                errors.Add(new ValidationResult("There is no dish title. Error!"));
+            }
+            if (this.Menus.Count == 0)
+            {
+                errors.Add(new ValidationResult("There is no menu! Please add your dish to some menu."));
+            }
+
+            return errors;
         }
         
     }
